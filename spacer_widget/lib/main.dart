@@ -50,7 +50,7 @@ class ChatScreen extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const Spacer(),
             const Icon(Icons.videocam, color: Colors.white),
             const SizedBox(width: 16),
@@ -86,3 +86,64 @@ class ChatScreen extends StatelessWidget {
               ],
             ),
           ),
+
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            child: Row(
+              children: [
+                const Icon(Icons.emoji_emotions_outlined, color: Colors.grey),
+                const SizedBox(width: 8),
+
+                // Text input field
+                const Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Message',
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+
+                const Spacer(),
+
+                CircleAvatar(
+                  backgroundColor: const Color(0xFF075E54),
+                  child: const Icon(Icons.mic, color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMessage({required String text, required bool isMe}) {
+    return Row(
+      children: [
+        if (isMe) const Spacer(flex: 2),
+
+        // The chat bubble
+        Container(
+          constraints: const BoxConstraints(maxWidth: 220),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          decoration: BoxDecoration(
+            color: isMe ? const Color(0xFFDCF8C6) : Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withAlpha(128),
+                blurRadius: 4,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Text(text, style: const TextStyle(fontSize: 15)),
+        ),
+
+        if (!isMe) const Spacer(flex: 2),
+      ],
+    );
+  }
+}

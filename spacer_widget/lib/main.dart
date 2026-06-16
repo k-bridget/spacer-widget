@@ -50,3 +50,39 @@ class ChatScreen extends StatelessWidget {
                 ),
               ],
             ),
+            
+            const Spacer(),
+            const Icon(Icons.videocam, color: Colors.white),
+            const SizedBox(width: 16),
+            const Icon(Icons.call, color: Colors.white),
+            const SizedBox(width: 8),
+          ],
+        ),
+      ),
+
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(12),
+              children: [
+                _buildMessage(text: "Hey! How are you?", isMe: false),
+
+                const SizedBox(height: 8),
+
+                _buildMessage(text: "I'm okay!How about you?", isMe: true),
+
+                const SizedBox(height: 8),
+
+                _buildMessage(
+                  text:
+                      "Good to hear, I'm doing great too and I wanted to remind you about our meeting tomorrow.",
+                  isMe: false,
+                ),
+
+                const SizedBox(height: 8),
+
+                _buildMessage(text: "I'll be there!", isMe: true),
+              ],
+            ),
+          ),

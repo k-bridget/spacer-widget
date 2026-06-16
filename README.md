@@ -34,3 +34,8 @@ The flex property controls how much space a spacer claims.
 3. spacer Position
 
 If isMe = true, texts are aligned to the right in green. and if isMe = false, texts are aligned to the left in white.
+
+# Demo UI
+
+<img width="479" height="430" alt="demo UI" src="https://github.com/user-attachments/assets/c390c7e0-18b8-4a30-bcc3-bafa1ed54fe8" />
+

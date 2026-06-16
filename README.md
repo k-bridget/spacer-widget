@@ -9,6 +9,7 @@ A spacer widget is a layout widget that adds space between elements on a screen.
 1. Clone the repository
 
 git clone https://github.com/k-bridget/spacer-widget.git
+
    cd spacer_widget
 
 2. Install dependencies
